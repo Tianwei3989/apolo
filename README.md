@@ -27,7 +27,7 @@ After approval, you will receive the following contents:
 </details>
 
 
-To get the most out of this repo, please also download [ArtEmis](https://www.artemisdataset.org/#dataset) annotations.
+Please also download [ArtEmis](https://www.artemisdataset.org/#dataset) annotations for getting the emotions and utterances.
 
 We are sorry that due to the copyright requirements, we can not share images from WikiArt. We prepare the artwork features extracted from CLIP RN50 for the training process (The ``arts_features_clip.lmdb.zip``).
 For visualization, please download the artworks images from the internet.
@@ -52,7 +52,7 @@ Please follow the steps to prepare data for training and evaluation:
 
 1. Doenload all files and move them to ``./data``
 2. Prepare artwork images from WikiArt to ``./data/artworks`` with the name of ``artist-name_artwork-name``, e.g, ``william-merritt-chase_topaz-grapes``.
-3. Download and extract ArtEmis dataset to get the key annotation file ``artemis_dataset_release_v0.csv``.
+3. Download and extract ArtEmis dataset to get the annotation file ``artemis_dataset_release_v0.csv``.
 4. Extract ``arts_features_vinvl_bbox_col.zip`` to ``./data/arts_features_vinvl_bbox_col`` to get the bounding boxes predicted by VinVL.
 4. Extract ``arts_features_clip.lmdb.zip`` to ``./data/arts_features_clip.lmdb`` to get the CLIP feature of the training.
 5. Extract ``arts_features_clip_vinvl_heatmap.zip`` to ``./data/arts_features_vinvl_heatmap_sum_unified`` to get the CLIP + VinVL feature of the training
