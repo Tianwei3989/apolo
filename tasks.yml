@@ -1,0 +1,19 @@
+TASK20:
+  name: WESD
+  type: pixel
+  loss: BCEWithLogitLoss
+  process: artemis
+  task_id: 28
+  dataroot: ./data
+  features_h5path1: ./data/arts_features_clip.lmdb
+  features_h5path2: ''
+  train_annotations_jsonpath: ''
+  val_annotations_jsonpath: ''
+  max_seq_length: 77
+  max_region_num: 101
+  batch_size: 128
+  eval_batch_size: 512
+  train_split: train
+  val_split: test
+  lr: 0.0002
+  num_epoch: 20
