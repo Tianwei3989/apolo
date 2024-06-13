@@ -3,7 +3,7 @@
 </p>
 
 # APOLO: Artwork Provoked Emotion Evaluation
-This project is about the study of [Emotional Stimuli Retrieval in Artworks](https://dl.acm.org/doi/10.1145/3652583.3658102).
+This project is about the study of [Emotional Stimuli Retrieval in Artworks](https://dl.acm.org/doi/10.1145/3652583.3658102) (ICMR 2024).
 
 ## APOLO Dataset
 Please download the data associated with APOLO by filling this [form](https://forms.gle/9q2YaQV3V9hbdBCk9).
