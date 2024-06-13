@@ -3,7 +3,7 @@
 </p>
 
 # APOLO: Artwork Provoked Emotion Evaluation
-This project is about the study of Emotional Stimuli Retrieval in Artworks.
+This project is about the study of [Emotional Stimuli Retrieval in Artworks](https://dl.acm.org/doi/10.1145/3652583.3658102).
 
 ## APOLO Dataset
 Please download the data associated with APOLO by filling this [form](https://forms.gle/9q2YaQV3V9hbdBCk9).
@@ -27,14 +27,14 @@ After approval, you will receive the following contents:
 </details>
 
 
-Please also download [ArtEmis](https://www.artemisdataset.org/#dataset) annotations for getting the emotions and utterances.
+Please also download [ArtEmis](https://www.artemisdataset.org/#dataset) annotations to get the emotions and utterances.
 
-We are sorry that due to the copyright requirements, we can not share images from WikiArt. We prepare the artwork features extracted from CLIP RN50 for the training process (The ``arts_features_clip.lmdb.zip``).
-For visualization, please download the artworks images from the internet.
+We are sorry that, due to copyright requirements, we can not share images from WikiArt. We prepare the artwork features extracted from CLIP RN50 for the training process (The ``arts_features_clip.lmdb.zip``).
+For visualization, please download the artwork images from the internet.
 
 ### Installation
 
-Please run following code for installing the environment.
+Please run the following code for installing the environment.
 ```commandline
 conda create -n apolo python=3.6
 conda activate apolo
@@ -44,15 +44,15 @@ pip install -r requirements.txt
 conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
 ```
 
-For training WESD on multiple GPU, please install [apex](https://github.com/NVIDIA/apex).
+To train WESD on multiple GPUs, please install [apex](https://github.com/NVIDIA/apex).
 
 ### Dataset preparation
 
 Please follow the steps to prepare data for training and evaluation:
 
-1. Doenload all files and move them to ``./data``
+1. Download all files and move them to ``./data``
 2. Prepare artwork images from WikiArt to ``./data/artworks`` with the name of ``artist-name_artwork-name``, e.g, ``william-merritt-chase_topaz-grapes``.
-3. Download and extract ArtEmis dataset to get the annotation file ``artemis_dataset_release_v0.csv``.
+3. Download and extract the ArtEmis dataset to get the annotation file ``artemis_dataset_release_v0.csv``.
 4. Extract ``arts_features_vinvl_bbox_col.zip`` to ``./data/arts_features_vinvl_bbox_col`` to get the bounding boxes predicted by VinVL.
 4. Extract ``arts_features_clip.lmdb.zip`` to ``./data/arts_features_clip.lmdb`` to get the CLIP feature of the training.
 5. Extract ``arts_features_clip_vinvl_heatmap.zip`` to ``./data/arts_features_vinvl_heatmap_sum_unified`` to get the CLIP + VinVL feature of the training
@@ -71,13 +71,13 @@ Please note that you need to have the following files in advance: ``artemis_data
 ### Training
 Please run ```python train_tasks.py``` to train WESD.
 After this process, the trained models will be saved in ``./save/[model_saving_name]/pytorch_model_19.bin``.
-By default, this code will use all of the existing GPU in your server. If you want to limit the number of GPU, please use ``CUDA_VISIBLE_DEVICES=[GPU_id]``.
+By default, this code will use all of the existing GPUs in your server. If you want to limit the number of GPUs, please use ``CUDA_VISIBLE_DEVICES=[GPU_id]``.
 
 ### Evaluation 
 Please follow the steps to evaluate WESD on the APOLO dataset.
 1. Find the trained model from ``./save/[model_saving_name]/pytorch_model_19.bin``.
 2. Run ```python ./eval_tasks.py --from_pretrained ./save/[model_saving_name]/pytorch_model_19.bin``` to get ``test_result.json``, which is the prediction of WESD on the artworks involved in APOLO.
-3. Modify the path on Line 92 to ``test_result.json`` and run ```python ./eval_map_iou.py```. This code will directly print out the Pr@ by the end of the calculation.
+3. Modify the path on Line 92 to ``test_result.json`` and run ```python ./eval_map_iou.py```. This code will print out the Pr@ directly by the end of the calculation.
 
 ### Visualization
 
