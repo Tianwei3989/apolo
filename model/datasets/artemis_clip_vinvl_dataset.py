@@ -40,8 +40,8 @@ def _load_dataset(dataroot, name):
     dataroot: root path of dataset
     name: 'train', 'dev', 'test'
     """
-    annotations_path = os.path.join(dataroot, "%s.csv" % name)
-    df = pd.read_csv(annotations_path)
+    annotations_path = os.path.join(dataroot, "%s.json" % name)
+    df = pd.read_json(annotations_path)
     # Build an index which maps image id with a list of hypothesis annotations.
     items = []
     count = 0
