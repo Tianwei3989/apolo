@@ -21,5 +21,8 @@ for i in range(df_apolo.shape[0]):
 df_apolo['emotion'] = emotions
 df_apolo['utterances'] = utterances
 
+# Caution: this process will create a new apolo.json with emotion and utterances and replace the original one.
+# If you want to keep the original apolo.json, please make a backup.
+df_apolo.to_json(os.path.join('./data', 'apolo.json'),orient='records')
 df_apolo[df_apolo['split']=='val'].to_json(os.path.join('./data', 'apolo_val.json'),orient='records')
 df_apolo[df_apolo['split']=='test'].to_json(os.path.join('./data', 'apolo_test.json'),orient='records')
